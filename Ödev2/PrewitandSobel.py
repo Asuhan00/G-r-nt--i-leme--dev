@@ -20,10 +20,17 @@ kernely = np.array([[-1,0,1],[-1,0,1],[-1,0,1]])
 img_prewitx = cv2.filter2D(img_gaussian, -1, kernelx)
 img_prewity = cv2.filter2D(img_gaussian, -1, kernely)
 
+#robert
+robertx = np.array([[0,1],[-1,0]])
+roberty = np.array([[1,0],[0,-1]])
+img_robertx = cv2.filter2D(img_gaussian, -1, robertx)
+img_roberty = cv2.filter2D(img_gaussian, -1, roberty)
+
 
 cv2.imshow("Original Image", img)
 cv2.imshow("Sobel", img_sobel)
 cv2.imshow("Prewit", img_prewitx + img_prewity)
+cv2.imshow("Robert",img_robertx+img_roberty)
 
 
 cv2.waitKey(0)
